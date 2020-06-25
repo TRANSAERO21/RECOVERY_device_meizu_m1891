@@ -20,3 +20,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="Meizu_15Plus-user 7.0 NRD90M 1530692351 release-keys"
 	
 BUILD_FINGERPRINT := "Meizu/Meizu_15Plus/15Plus:7.0/NRD90M/1530692351:user/release-keys"
+
+# HACK: Set vendor patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2099-12-31
