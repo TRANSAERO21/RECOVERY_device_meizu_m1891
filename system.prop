@@ -1,0 +1,11 @@
+ro.secure=0
+ro.adb.secure=0
+ro.sf.lcd_density=480
+persist.sys.usb.config=mtp
+persist.sys.isUsbOtgEnabled=true
+ro.sf.lcd_density=640
+ro.meizu.project.id=M1891-7
+ro.product.flyme.model=M1891
+ro.build.display.id=Flyme 7.0.3.1G
+
+
