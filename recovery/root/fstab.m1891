@@ -1,0 +1,19 @@
+# Android fstab file.
+#<src>                  <mnt_point>         <type>    <mnt_flags and options>                               <fs_mgr_flags>
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+
+/dev/block/platform/11120000.ufs/by-name/system      /system             ext4      ro,noload,barrier=1,discard                              wait,verify
+/dev/block/platform/11120000.ufs/by-name/custom      /custom             ext4      ro,noload,errors=panic                                   wait,formattable
+/dev/block/platform/11120000.ufs/by-name/cache       /cache              ext4      noatime,nosuid,nodev,nomblk_io_submit,errors=panic       wait,check,formattable
+/dev/block/platform/11120000.ufs/by-name/userdata    /data               ext4      noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,resize,formattable,encryptable=footer
+/dev/block/platform/11120000.ufs/by-name/efs         /efs                ext4      defaults,rw                                              wait,check,formattable
+/dev/block/platform/11120000.ufs/by-name/mnv         /mnv                ext4      ro,noload,errors=panic                                   wait
+/dev/block/platform/11120000.ufs/by-name/misc        /misc               emmc      defaults                                                 defaults
+
+# VOLD
+#/devices/15740000.dwmmc2/mmc_host/mmc0		/storage/sdcard		vfat	default	voldmanaged=sdcard:auto
+/devices/platform/11500000.dwmmc2/mmc_host*             auto    auto    default voldmanaged=sdcard1:auto,encryptable=
+/devices/platform/10c00000.usb*				auto	vfat	default	voldmanaged=usb1:auto
+/devices/platform/10c00000.usb/10c00000.dwc3*		auto	vfat	default	voldmanaged=usb2:auto
