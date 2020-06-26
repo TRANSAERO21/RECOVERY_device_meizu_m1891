@@ -24,7 +24,7 @@ TARGET_NO_BOOTLOADER := true
 BOARD_KERNEL_BASE := 0x80078000
 BOARD_KERNEL_PAGESIZE := 4096
 TARGET_PREBUILT_KERNEL := device/meizu/m1891/prebuilt/recovery.img-kernel
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --tags_offset 0xfff88100 --second_offset 0x00e88000
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 #--tags_offset 0xfff88100 #--second_offset 0x00e88000 #Build Problems 
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
